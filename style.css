@@ -1,3 +1,5 @@
+/*General adjusting of the page/project*/
+
 * {
     padding: 0;
     margin: 0;
@@ -17,122 +19,151 @@ body {
     justify-content: center;
 }
 
-.instagram-wrapper {
+/* Setting the flex container with the right container (Login , Not user and Get app) , and image container */
+
+
+
+.flex-container {
     display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
     align-items: center;
-    justify-content: start;
-    width: 60%;
-    height: 100vh;
+    margin: 50px;
+
 }
 
-.instagram-phone {
+.right-container {
+
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
-}
-
-.instagram-phone img {
-    height: 50rem;
-}
-
-.instagram-continue {
-    display: flex;
-    align-items: center; /* horizontal */
-    justify-content: space-around; /* vertical */
     flex-direction: column;
-    width: 50%;
-    min-height: 34rem;
-}
-
-.group {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-    background-color: #ffffff;
+    justify-content: space-around;
     width: 100%;
-    padding: 1.3rem 0;
-    border: 1px solid lightgray;
+    height: 80%;
 }
 
-.group:nth-child(1) {
-    min-height: 19rem;
-}
+.image-container {
 
-.instagram-logo {
-    height: 3rem;
-}
-
-.profile-photo {
     display: flex;
-    justify-content: center;
+    width: 50%;
+    height: 90%;
+}
+
+
+/* Adjusting sizes of the image */
+
+.imagem-celular {
+    height: 55rem;
+}
+
+
+/*Working on The sub containers - Login container - setting the instagram logo, profiel picture with border radious and elaborate on the
+Continue button alongside with the remove account option */
+
+.Login-container {
+
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: space-around;
+
+    border: 1px solid lightgrey;
+    background-color: #ffffff;
+
+    margin: 10px;
+    padding: 15px;
+
+}
+
+.foto-perfil {
+    max-width: 200px;
+    max-height: 200px;
     border-radius: 50%;
-    overflow: hidden;
 }
 
-.profile-photo img {
-    height: 6rem;
-}
+.login-botao {
+    font-size: 15px;
+    font-weight: bold;
 
-.instagram-login {
     background-color: #0095f6;
     color: #ffffff;
     padding: 8px;
     border-radius: 4px;
 }
 
-.instagram-logout {
+
+/* setting this classes to color the letters of the instagram model. blue and grey */
+
+.azul-instagram {
+    font-size: 15px;
     color: #0095f6;
-    margin-top: 1rem;
+    font-weight: bold;
 }
 
-.not-account {
+.cinza-instagram {
+    font-size: 15px;
+    font-weight: bold;
     color: rgb(160, 160, 160);
 }
 
-.link-blue {
-    color: #0095f6;
-}
 
-.get-the-app {
+
+/* Setting the notSub-container to fit in column both phrases that were supposed to be inside it */
+
+.notSub-container {
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    padding: 1.3rem 0;
+
+    border: 1px solid lightgrey;
+    background-color: #ffffff;
+    margin: 10px;
 }
 
-.download {
+/*In the final part of the project, adjusting the Get app container, that will be having 2 inside containers, 1 for the text and 1 for both images. The main container will be put in column direction to allow one element be above the other and the second container, row (default) 
+direction to put both iamges side by side. */
+
+.getApp-Container {
+    flex-grow: 1;
     display: flex;
-    width: 100%;
-    justify-content: space-evenly;
+    flex-direction: column;
     align-items: center;
-    padding: 1rem;
+    justify-content: space-around;
+
+
+    margin: 10px;
 }
 
-.app-download {
-    height: 3rem;
-    width: 10rem;
-    background-size: cover;
+.getApp-texto {
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
 }
 
-.app-download:nth-child(1) {
-    background-image: url('./img/apple-button.png');
+
+.download-container {
+    display: flex;
+    justify-content: center;
 }
 
-.app-download:nth-child(2) {
-    background-image: url('./img/googleplay-button.png');
+.getAppImg {
+    width: 200px;
 }
+
+
 
 /* media queries */
 
 
-@media (max-width: 1024px) {
-    .instagram-wrapper {
+@media (max-width: 1070px) {
+    .flex-container {
         width: 90%;
+    }
+
+    .image-container {
+        display: none;
     }
 }
 
@@ -141,19 +172,22 @@ body {
         background-color: #ffffff;
     }
 
-    .instagram-wrapper {
+    .flex-container {
         width: 90%;
     }
 
-    .instagram-phone {
-        display: none;
-    }
 
-    .instagram-continue {
+    .right-container {
         width: 100%;
     }
-    
+
     .group {
         border: 1px solid transparent;
+    }
+
+    .download-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 }
